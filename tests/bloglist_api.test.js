@@ -39,9 +39,12 @@ test('a valid blog can be added ', async () => {
         likes: 420
     }
 
+    
 
     await api
         .post('/api/blogs')
+        .set('Authorization', 'abc123')  
+        .send('Authorization: bearer abc123')               
         .send(newBlog)
         .expect(200)
         .expect('Content-Type', /application\/json/)
@@ -107,6 +110,8 @@ test('blog without likes has 0 likes', async () => {
  
    expect(response.body[0].title).toBe('HTML is easy')
  })*/
+
+
 
 afterAll(() => {
     mongoose.connection.close()
