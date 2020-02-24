@@ -16,7 +16,8 @@ const CreateForm = ({
             <form onSubmit={handleSubmit}>
                 <div>
                     title
-          <input
+          <input        
+                        id="title"    
                         value={title}
                         onChange={handleTitleChange}
                     />
@@ -24,7 +25,7 @@ const CreateForm = ({
                 <div>
                     author
           <input
-                        
+                        id="author"
                         value={author}
                         onChange={handleAuthorChange}
                     />
@@ -33,12 +34,13 @@ const CreateForm = ({
                     url
                     <input
                         
+                        id="url"
                         value={url}
                         onChange={handleUrlChange}
                     />
 
                 </div>
-                <button type="submit">create</button>
+                <button id='create-button' type="submit">create</button>
             </form>
         </div>
     )
